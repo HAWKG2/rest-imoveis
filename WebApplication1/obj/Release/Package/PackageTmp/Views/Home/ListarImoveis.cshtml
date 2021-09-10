@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebApplication1.Models.Imoveis>
+
+@{
+    ViewBag.Title = "ListarImoveis";
+}
+
+<h2>Listar Imoveis</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar imóvel", "CadastrarImovel")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tipo do imóvel
+        </th>
+        <th>
+            Valor de venda
+        </th>
+        <th>
+            Valor de locação
+        </th>
+        <th>
+            Area edificada 
+        </th>
+        <th>
+            Endereço
+        </th>
+        <th>
+            Número
+        </th>
+        <th>
+            Complemento
+        </th>
+        <th>
+            Bairro
+        </th>
+        <th>
+            Cidade
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            CEP
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoImovel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valorVenda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valorLocacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.areaEdificada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.complemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cep)
+        </td>
+    </tr>
+}
+
+</table>
